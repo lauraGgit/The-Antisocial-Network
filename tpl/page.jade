@@ -1,0 +1,23 @@
+doctype html
+html(lang="en")
+  head
+        title= "NodeBook"
+        script(src ='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+        script(src ='//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js')
+        script(src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.1.38/jquery.form-validator.min.js")
+        script(src='/socket.io/socket.io.js')
+        script(src='/autolinker.min.js')
+        script(src='/fe.js')
+        link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css')
+        link(rel='stylesheet', href='style.css')
+    body
+        #container
+          #newPost
+            form#postForm.form-inline
+              label(for='nPost') Add a new post
+              br
+              input#postInp.form-control(type='text', name='new_Post', data-validation="text", data-validation-help="What's going on?" style="width:90%")
+              button#addPost.btn.btn-primary(type=submit style="margin-left:5px") Post
+              br
+          #oldPosts
+          a#oldestButton Older
